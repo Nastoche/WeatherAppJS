@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f09bdbeec6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Projet API Météo</title>
+</head>
+<body>
+    <header>
+        <h1>Météo du jour</h1>
+    <div class="search" id="search">
+        <form id="form1" onkeydown="return event.key != 'Enter';">
+        <input type="text" id="input1" placeholder="Rechercher par ville">
+        </form>
+        <button id="delete-input"><i class="far fa-times-circle"></i></button>
+    </div>
+    </header>
+    <section class="citysearch" id="citysearch">
+        <div class="container">
+            <div class="box box1" id="city"></div>
+            <div class="box box2" id="description"></div>
+            <div class="box box3" id="temp"></div>
+            <div class="box box4" id="wind"></div>
+            <div class="box box5" id="humidity"></div>
+            <div class="box box6" id="pressure"></div>
+        </div>
+    </section>
+    <div class="footer">
+        <span>Made by</span>
+    <a href="https://www.axelguichard.com" class="home">Axel Guichard</a>
+    </div>
+    <script type="text/javascript" src="appAsync.js"></script>
+</body>
+</html>
