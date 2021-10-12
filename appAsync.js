@@ -44,7 +44,35 @@ document.querySelector("#input1").addEventListener("input", function () {
   }
 });
 
-weatherByCity("Paris");
+const lastCity = () => {
+  let cityStorage = localStorage.getItem("city");
+  let cityByDefault = document.getElementById("cityByDefault");
+
+  if (cityStorage == "" || cityStorage == null) {
+    weatherByCity("Paris");
+    cityByDefault.innerHTML = "Ville par défaut :<br>PARIS";
+  } else {
+    weatherByCity(`${cityStorage}`);
+    cityByDefault.innerHTML = `Ville par défaut :<br>${cityStorage.toUpperCase()}`;
+  }
+};
+
+lastCity();
+
+function setData() {
+  const city = document.querySelector("#input1").value;
+  let cityByDefault = document.getElementById("cityByDefault");
+
+  cityByDefault.innerHTML = `Ville par défaut :<br>${city.toUpperCase()}`;
+  localStorage.setItem("city", city);
+}
+
+function deleteData() {
+  let cityByDefault = document.getElementById("cityByDefault");
+
+  cityByDefault.innerHTML = "Ville par défaut :<br>PARIS";
+  localStorage.setItem("city", "");
+}
 
 const deleteBtn = document.getElementById("delete-input");
 

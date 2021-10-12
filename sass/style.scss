@@ -66,6 +66,46 @@ header {
       }
     }
   }
+  .default {
+    text-align: center;
+    width: 80%;
+    .defaultCity {
+      color: black;
+      margin-bottom: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      outline: none;
+      border: 1px black solid;
+      font-size: 1.1em;
+      &:hover {
+        background-color: rgba(85, 221, 85, 0.808);
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+    .defaultCity1 {
+      color: black;
+      margin-bottom: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      outline: none;
+      border: 1px black solid;
+      font-size: 1.1em;
+      &:hover {
+        background-color: rgba(221, 85, 85, 0.808);
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+    @media screen and (max-width: 410px) {
+      min-width: 300px;
+    }
+  }
+  .cityByDefault {
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+  }
 }
 
 .citysearch {
