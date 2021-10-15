@@ -48,7 +48,7 @@ const lastCity = () => {
   let cityStorage = localStorage.getItem("city");
   let cityByDefault = document.getElementById("cityByDefault");
 
-  if (cityStorage == "" || cityStorage == null) {
+  if (!cityStorage) {
     weatherByCity("Paris");
     cityByDefault.innerHTML = "Ville par défaut :<br>PARIS";
   } else {
@@ -64,14 +64,19 @@ function setData() {
   let cityByDefault = document.getElementById("cityByDefault");
 
   cityByDefault.innerHTML = `Ville par défaut :<br>${city.toUpperCase()}`;
-  localStorage.setItem("city", city);
+
+  if (city !== "") {
+    localStorage.setItem("city", city);
+  } else {
+    deleteData();
+  }
 }
 
 function deleteData() {
   let cityByDefault = document.getElementById("cityByDefault");
 
   cityByDefault.innerHTML = "Ville par défaut :<br>PARIS";
-  localStorage.setItem("city", "");
+  localStorage.clear();
 }
 
 const deleteBtn = document.getElementById("delete-input");
